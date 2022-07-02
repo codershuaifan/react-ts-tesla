@@ -1,0 +1,56 @@
+.view_back {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: black;
+    opacity: 0.7;
+    z-index: 100;
+}
+
+.view_main {
+    color: black;
+    background: white;
+    position: fixed;
+    height: 80vh;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 101;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-size: 1.3em;
+}
+
+.view_top {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.view_item {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    height: 17%;
+    border: 1px solid #D0D1D2;
+    margin: 20px;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+
+.view_img{
+    width: 60%;
+}
+
+.view_activeItem{
+    border: 3px solid #3E6AE1;
+}
+
+.view_todo{
+    text-align: center;
+    color: gray;
+    font-size: 0.7em;
+    margin-top: -2px;
+}

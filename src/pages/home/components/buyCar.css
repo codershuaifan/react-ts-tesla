@@ -1,0 +1,95 @@
+.buy_top {
+    height: 45px;
+    line-height: 45px;
+    position: fixed;
+    top: 0;
+    left: 10px;
+    right: 10px;
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.buy_design {
+    font-size: 0.6em;
+    margin: 0 auto;
+}
+
+.buy_main {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.buy_img {
+    width: 100%;
+}
+
+.buy_logo{
+    font-size: 1.8em;
+    margin-top: 40px;
+}
+
+.buy_energy{
+    margin-top: 40px;
+    text-align: left;
+    padding-left: 20px;
+    font-weight: 400;
+    color: rgb(92, 94, 98);
+}
+
+.buy_carPrice {
+    display: flex;
+    align-items: center;
+    margin: 20px auto 0px;
+    border: 3px solid #3E6AE1;
+    width: 80%;
+    border-radius: 30px;
+    height: 50px;
+    font-weight: 600;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1em;
+}
+
+.buy_detail {
+    width: 140px;
+    font-size: 0.7em;
+    border-radius: 15px;
+    background-color: #F4F4F4;
+    height: 30px;
+    line-height: 30px;
+    margin:30px auto 0;
+}
+
+.buy_color{
+    font-size: 1.6em;
+    margin-top: 25px;
+}
+
+.buy_box{
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 40px;
+}
+
+.buy_ball{
+    width: 14%;
+    border-radius: 30px;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+.buy_head{
+    width: 100%;
+    margin-top: 40px;
+}
+
+.buy_wheel_box{
+    display: flex;
+    justify-content: center;
+}

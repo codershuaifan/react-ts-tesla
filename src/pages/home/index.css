@@ -1,0 +1,106 @@
+.home_content {
+    height: 665px;
+    background-size: 100%;
+}
+
+.home_carName {
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.home_carInfo {
+    position: absolute;
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    flex: 1
+}
+
+.buy_carInfo {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    color: black;
+    font-size: 0.8em;
+    flex: 1;
+    margin:40px auto 0px;
+}
+
+.home_div {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 200;
+}
+
+.home_span {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.home_buy {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 25em;
+    top: 82.5%;
+    background-color: #4E4E53;
+    line-height: 2.5em;
+    border-radius: 30px;
+    color: white;
+    border: 0;
+}
+
+.home_know {
+    position: absolute;
+    left: 50%;
+    top: 89%;
+    transform: translate(-50%);
+    color: white;
+    text-decoration: underline
+}
+
+.home_main{
+    margin-top: 50px;
+    padding: 30px;
+}
+
+.home_title {
+    font-size: 2em;
+    text-align: center;
+}
+
+.home_des {
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.home_img {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.home_button {
+    margin-left: 50%;
+    transform: translate(-50%);
+    width: 25em;
+    margin-top: 30px;
+    line-height: 2.5em;
+    border-radius: 30px;
+    border: 3px solid black;
+    background: white;
+}
+
+.home_new{
+    padding: 30px;
+    font-size: 2em;
+    text-align: center;
+}
