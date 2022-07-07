@@ -3,12 +3,12 @@ import { Navigate } from 'react-router-dom'
 import { routerType } from '../interface'
 
 import Find from "../pages/find"
-import FindNews from "../pages/find/findNews"
 import Home from "../pages/home"
 import BuyCar from '../pages/home/components/buyCar'
 import Map from "../pages/map"
 import Shop from "../pages/shop"
-import ShopList from "../pages/shop/shopList"
+import ShopList from '../pages/shop/components/shoplist'
+import ShopInfo from '../pages/shop/components/shopinfo'
 import User from '../pages/user'
 import View from '../pages/home/components/view'
 
@@ -17,12 +17,6 @@ export default function UseRouterList() {
         {
             path: '/find',
             element: <Find />,
-            children: [
-                {
-                    path: '/find/:id',
-                    element: <FindNews />
-                }
-            ]
         },
         {
             path: '/home',
@@ -47,8 +41,12 @@ export default function UseRouterList() {
             element: <Shop />,
             children: [
                 {
-                    path: '/shop/shoplist',
+                    path: '/shop/shoplist/:id',
                     element: <ShopList />
+                },
+                {
+                    path: '/shop/shopinfo',
+                    element: <ShopInfo />
                 }
             ]
         },

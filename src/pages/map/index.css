@@ -1,0 +1,16 @@
+.map_main {
+    position: absolute;
+    top: 0;
+    bottom: 49px;
+    left: 0;
+    right: 0;
+}
+
+.map_search {
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    --background: white;
+}

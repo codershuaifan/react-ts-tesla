@@ -1,0 +1,14 @@
+.shoplist_body{
+    background-color: #fff;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.shoplist_img{
+    width: 100%;
+    margin-top: 15vh;
+}

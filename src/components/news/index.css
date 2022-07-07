@@ -1,0 +1,32 @@
+.find_news {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: space-between;
+    margin-top: 30px;
+    height: 60px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.find_h1 {
+    font-size: 1.1em;
+}
+
+.find_p {
+    font-size: 0.8em;
+    color: #C4C4C4;
+    font-weight: bold;
+}
+
+.find_newsRight {
+    width: 30%;
+    /* height: 30%; */
+}
+
+.find_modal_title {
+    font-size: 1.7em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

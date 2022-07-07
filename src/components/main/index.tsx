@@ -25,16 +25,16 @@ export default function Main() {
                 <img src={require('@/assets/icon/火箭1.png')} alt='' className='main_img_v2' />,
         },
         {
-            key: '/home',
-            title: 'Tesla',
-            icon: pathname !== '/home' ? <img src={require('@/assets/icon/车辆.png')} alt='' className='main_img' /> :
-                <img src={require('@/assets/icon/车辆1.png')} alt='' className='main_img_v2' />,
-        },
-        {
             key: '/map',
             title: '地图',
             icon: pathname !== '/map' ? <img src={require('@/assets/icon/地图.png')} alt='' className='main_img' /> :
                 <img src={require('@/assets/icon/地图1.png')} alt='' className='main_img_v2' />,
+        },
+        {
+            key: '/home',
+            title: 'Tesla',
+            icon: pathname !== '/home' ? <img src={require('@/assets/icon/车辆.png')} alt='' className='main_img' /> :
+                <img src={require('@/assets/icon/车辆1.png')} alt='' className='main_img_v2' />,
         },
         {
             key: '/shop',
@@ -54,7 +54,7 @@ export default function Main() {
             <div className='main_body'>
                 {element}
             </div>
-            <TabBar className='main_tabbar' onChange={value => navigate(value)} defaultActiveKey='/home'>
+            <TabBar className='main_tabbar' onChange={value => navigate(value)} defaultActiveKey={pathname}>
                 {tabs.map(item => (
                     <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
                 ))}

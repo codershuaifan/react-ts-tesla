@@ -1,0 +1,26 @@
+.show_main_img {
+    width: 100%;
+}
+
+.shop_title {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.shop_content {
+    width: 90%;
+    box-shadow: #6E6E6E 0px 0px 15px;
+}
+
+.shop_swiper {
+    height: 50%;
+    /* margin-top: 10px; */
+}
+
+.shop_box {
+    width: 100%;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+}
