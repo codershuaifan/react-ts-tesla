@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import { Navigate } from 'react-router-dom'
 import { routerType } from '../interface'
 
-import Find from "../pages/find"
-import Home from "../pages/home"
-import BuyCar from '../pages/home/components/buyCar'
-import Map from "../pages/map"
-import Shop from "../pages/shop"
-import ShopList from '../pages/shop/components/shoplist'
-import ShopInfo from '../pages/shop/components/shopinfo'
-import User from '../pages/user'
-import View from '../pages/home/components/view'
+const Find = lazy(() => import('../pages/find'))
+const Home = lazy(() => import('../pages/home'))
+const BuyCar = lazy(() => import('../pages/home/components/buyCar'))
+const Map = lazy(() => import('../pages/map'))
+const Shop = lazy(() => import('../pages/shop'))
+const ShopList = lazy(() => import('../pages/shop/components/shoplist'))
+const ShopInfo = lazy(() => import('../pages/shop/components/shopinfo'))
+const User = lazy(() => import('../pages/user'))
+const View = lazy(() => import('../pages/home/components/view'))
 
 export default function UseRouterList() {
     const routes: routerType[] = [
@@ -44,11 +44,11 @@ export default function UseRouterList() {
                     path: '/shop/shoplist/:id',
                     element: <ShopList />
                 },
-                {
-                    path: '/shop/shopinfo',
-                    element: <ShopInfo />
-                }
             ]
+        },
+        {
+            path: '/shop/shopinfo',
+            element: <ShopInfo />
         },
         {
             path: '/user',

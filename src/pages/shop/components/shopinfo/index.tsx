@@ -1,25 +1,55 @@
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { NavBar } from 'antd-mobile'
+import { NavBar, Rate } from 'antd-mobile'
+import { SmileOutline } from 'antd-mobile-icons'
 import './index.css'
+import { type } from 'os'
+
+type LoRE = {
+    state: any
+}
 
 export default function ShopInfo() {
-    const { state } = useLocation()
+    const { state }: LoRE = useLocation()
     const navigate = useNavigate()
     return (
-        <div className='shopinfo_body'>
+        <div>
             <NavBar onBack={() => navigate(-1)}>Tesla官方商城｜Tesla</NavBar>
-            <div className="shop-header">
-                <div className="shop-header-left">
-                    <img src='' />
-                    <span>|</span>
-                    <span>商店</span>
+            <div className='shopinfo_footer' />
+            <div className="shopinfo_header">
+                <div className="shopinfo-header-left">
+                    <img src={require('@/assets/img/Tesla.png')} alt='' style={{ width: '50%' }} />
+                    <div className='shopinfo-header-line'>|</div>
+                    <div className='shopinfo-header-shop'>商店</div>
                 </div>
-                <div className="shop-header-right">
-                    {/* <svg viewBox="0 0 1024 1024" p-id="7071"><path d="M289.92 768c2.56 0 632.32 0 639.36 0 14.72 0 26.24-12.8 28.16-28.8 0 0 43.52-244.48 64-413.44C1027.2 279.04 1004.8 256 961.92 256L264.96 256 253.44 156.16C251.52 140.8 240.64 128 226.56 128 224.64 128 97.92 128 97.92 128c-17.92 0-32 14.08-32 32 0 17.92 14.08 32 32 32l99.84 0 64.64 547.2C263.68 755.2 275.84 768 289.92 768zM960.64 320c-17.28 135.68-46.08 316.16-57.6 384L318.08 704 272.64 320 960.64 320zM321.92 832c-35.2 0-64 28.8-64 64 0 35.2 28.8 64 64 64 35.2 0 64-28.8 64-64C385.92 860.8 357.12 832 321.92 832zM897.92 832c-35.2 0-64 28.8-64 64 0 35.2 28.8 64 64 64 35.2 0 64-28.8 64-64C961.92 860.8 933.12 832 897.92 832z" p-id="7072" fill={currentColor}></path></svg> */}
-                    <span>导航栏</span>
+                <div className="shopinfo-header-right">
+                    <img src={require('@/assets/img/购物车.png')} alt='' className='shopinfo-header-img' />
+                    <div className='shopinfo-header-name'>导航栏</div>
                 </div>
             </div>
+            <div className="shopinfo-main">
+                <div className="shopinfo-main-text">
+                    <h1 className='shopinfo-h1'>点击购买 家庭充电服务包</h1>
+                    <h2 className='shopinfo-h2'>随时在家为特斯拉充电</h2>
+                </div>
+            </div>
+            <div className="shopinfo-box-title">
+                <h3 className='shopinfo-box-h3'>畅销商品</h3>
+                <a className='shopinfo-box-a'>查看全部</a>
+            </div>
+            {
+                state?.map((item: any) => {
+                    return (
+                        <div key={item.id} className="shopinfo-container" >
+                            <div className="shopinfo-name">
+                                <h3 style={{ color: `${item.color}` }}>{item.title}</h3>
+                            </div>
+                            <img src={item.picUrl} className='shopinfo-img' />
+                        </div>
+                    )
+                })
+            }
+            <Rate allowHalf defaultValue={2} character={<SmileOutline />} className='shopinfo-view'/>
         </div>
     )
 }

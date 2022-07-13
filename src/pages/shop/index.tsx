@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Swiper } from 'antd-mobile'
+import { Swiper,Image } from 'antd-mobile'
 import { HttpGet } from '../../utils/axios'
 import { Outlet, useNavigate } from 'react-router-dom'
+import Spin from '../../components/spin/Spin'
 import './index.css'
 
 export default function Shop() {
@@ -20,7 +21,7 @@ export default function Shop() {
   const items = card?.TZONE?.map((i: any) => (
     <Swiper.Item key={i.id}>
       <div className='shop_box' onClick={() => shopList(i)}>
-        <img className='shop_content' src={i.picUrl} alt='' />
+        <Image className='shop_content' src={i.picUrl} alt='' placeholder={<Spin />}/>
       </div>
     </Swiper.Item>
   ))

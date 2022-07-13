@@ -1,0 +1,40 @@
+.user_img {
+    width: 100vw;
+}
+
+.user_main {
+    position: fixed;
+    bottom: 30vh;
+    left: 30px;
+    color: white;
+    z-index: 100;
+    font-size: 1.5em;
+    letter-spacing: 3px;
+}
+
+.user_body {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 49px;
+}
+
+.user_but {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    background-color: white;
+    color: black;
+    font-size: 0.6em;
+    border-radius: 30px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.user_footer{
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { Suspense } from 'react'
 import { useLocation, useRoutes, useNavigate } from 'react-router-dom'
 import UseRouterList from '../../routes'
-import { TabBar } from 'antd-mobile'
+import { TabBar, SpinLoading } from 'antd-mobile'
 import './index.css'
 
 // const nameList: any = {
@@ -11,6 +11,15 @@ import './index.css'
 //     '/shop': '商店',
 //     '/user': '我的'
 // }
+
+const Spin = () => {
+    return (
+        <div className='main_spin'>
+            <SpinLoading color='currentColor' style={{ '--size': '48px' }}/>
+            <div style={{marginTop:'5px'}}>加载中</div>
+        </div>
+    )
+}
 
 export default function Main() {
     const location = useLocation()
@@ -51,9 +60,12 @@ export default function Main() {
     ]
     return (
         <>
-            <div className='main_body'>
-                {element}
-            </div>
+            <Suspense fallback={<Spin />}>
+                <div className='main_body'>
+                    {element}
+                </div>
+            </Suspense>
+
             <TabBar className='main_tabbar' onChange={value => navigate(value)} defaultActiveKey={pathname}>
                 {tabs.map(item => (
                     <TabBar.Item key={item.key} icon={item.icon} title={item.title} />

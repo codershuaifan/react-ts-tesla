@@ -1,9 +1,132 @@
-.shopinfo_body{
-    background-color: #fff;
-    z-index: 5;
+.shopinfo_header {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    background-color: #2B2D2E;
+    color: #ffffff;
+    height: 40px;
+}
+
+.shopinfo_footer{
     position: fixed;
-    top: 0;
-    right: 0;
     bottom: 0;
+    right: 0;
     left: 0;
+    height: 49px;
+    background: white;
+    z-index: 3333;
+}
+
+.shopinfo-header-left {
+    width: 55%;
+    padding-left: 6%;
+    line-height: 20px;
+}
+
+.shopinfo-header-right {
+    width: 45%;
+    padding-right: 6%;
+    line-height: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12%;
+}
+
+.shopinfo-header-line {
+    display: inline-block;
+    font-size: 1.2em;
+    margin-left: 20%;
+}
+
+.shopinfo-header-shop {
+    display: inline-block;
+    float: right;
+    font-size: 1.2em;
+}
+
+.shopinfo-header-name {
+    display: inline-block;
+    font-size: 1.2em;
+}
+
+.shopinfo-header-img {
+    width: 25%;
+    margin-bottom: 3px;
+}
+
+.shopinfo-main {
+    width: 100%;
+    height: 65vh;
+    background-image: url('https://www.tesla.cn/ns_videos/commerce/content/dam/tesla/tesla-shop-marketing-imagery/hero-carousel/wall-connector-gen3-mobile.jpg');
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.shopinfo-main-text {
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    left: 0;
+    width: 100%;
+    color: white;
+}
+
+.shopinfo-h1 {
+    line-height: 1.8em;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    font-weight: normal;
+}
+
+.shopinfo-h2 {
+    font-size: 2.6em;
+    font-weight: normal;
+}
+
+.shopinfo-box-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 18px;
+}
+
+.shopinfo-box-h3 {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.shopinfo-box-a {
+    font-size: 12px;
+    font-weight: normal;
+    color: #666666;
+}
+
+.shopinfo-container {
+    position: relative;
+    z-index: 4444;
+    padding: 0 1.5em 1em 1.5em;
+}
+
+.shopinfo-name {
+    z-index: 2;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.shopinfo-img {
+    width: 100%;
+    height: 30em;
+}
+
+.shopinfo-view{
+    width: 100%;
+    position: relative;
+    left: 30%;
 }
