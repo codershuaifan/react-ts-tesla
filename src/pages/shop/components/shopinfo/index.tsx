@@ -3,7 +3,6 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { NavBar, Rate } from 'antd-mobile'
 import { SmileOutline } from 'antd-mobile-icons'
 import './index.css'
-import { type } from 'os'
 
 type LoRE = {
     state: any

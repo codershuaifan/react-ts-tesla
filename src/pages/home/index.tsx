@@ -34,7 +34,7 @@ export default function Home() {
     }
     return (
         <div>
-            <Swiper loop indicatorProps={{ color: 'white' }}>
+            <Swiper loop autoplay indicatorProps={{ color: 'white' }}>
                 {items}
             </Swiper>
             <div className="home_main">

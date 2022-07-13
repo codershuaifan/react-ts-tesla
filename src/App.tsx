@@ -5,15 +5,15 @@ import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 
 export default function App() {
-  const handle = useFullScreenHandle();
-  useEffect(() => {
-    handle.enter()
-  }, [])
+  // const handle = useFullScreenHandle();
+  // useEffect(() => {
+  //   handle.enter()
+  // }, [])
   return (
     <HashRouter>
-      <FullScreen handle={handle}>
+      {/* <FullScreen handle={handle}> */}
         <Main />
-      </FullScreen>
+      {/* </FullScreen> */}
     </HashRouter>
   )
 }
