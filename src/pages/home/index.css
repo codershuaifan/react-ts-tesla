@@ -1,6 +1,8 @@
 .home_content {
     height: 665px;
     background-size: 100%;
+    background-repeat: no-repeat;
+
 }
 
 .home_carName {

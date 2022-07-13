@@ -1,22 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import ReactDom from 'react-dom'
 import { Swiper } from 'antd-mobile'
 import { HttpGet } from '../../utils/axios'
 import { Outlet, useNavigate } from 'react-router-dom'
 import CarInfo from '../../components/carInfo'
+import { FullScData } from '../../App'
 
 import './index.css'
 
 export default function Home() {
+    const value = useContext(FullScData)
+    
     const navigate = useNavigate()
     const [swiperData, setswiperData] = useState<Array<{}>>([])
     const jumpButton = (id: Number) => {
         navigate(`/home/buycar/${id}`)
     }
+    const handleFull = () => {
+        value.enter()
+    }
     const items = swiperData?.map((i: any) => (
         <Swiper.Item key={i.id}>
             <div className='home_content' style={{ backgroundImage: `url(${i.picUrl})` }}>
-                <div className='home_carName'>{i.name}</div>
+                <div className='home_carName' onClick={handleFull}>{i.name}</div>
                 <CarInfo params={i} />
                 <button className='home_buy' onClick={() => jumpButton(i.id)}>立即订购</button>
                 <a className='home_know'>了解更多</a>
