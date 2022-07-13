@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.132facd5.css",
-    "main.js": "./static/js/main.c55d1d11.js",
+    "main.js": "./static/js/main.f9c30e5b.js",
     "static/css/670.fc4bafef.chunk.css": "./static/css/670.fc4bafef.chunk.css",
     "static/js/670.389b1963.chunk.js": "./static/js/670.389b1963.chunk.js",
     "static/css/438.1bff8869.chunk.css": "./static/css/438.1bff8869.chunk.css",
@@ -28,7 +28,7 @@
     "static/media/地图1.png": "./static/media/地图1.ba0e03391ae31d9b820f.png",
     "index.html": "./index.html",
     "main.132facd5.css.map": "./static/css/main.132facd5.css.map",
-    "main.c55d1d11.js.map": "./static/js/main.c55d1d11.js.map",
+    "main.f9c30e5b.js.map": "./static/js/main.f9c30e5b.js.map",
     "670.fc4bafef.chunk.css.map": "./static/css/670.fc4bafef.chunk.css.map",
     "670.389b1963.chunk.js.map": "./static/js/670.389b1963.chunk.js.map",
     "438.1bff8869.chunk.css.map": "./static/css/438.1bff8869.chunk.css.map",
@@ -52,6 +52,6 @@
   },
   "entrypoints": [
     "static/css/main.132facd5.css",
-    "static/js/main.c55d1d11.js"
+    "static/js/main.f9c30e5b.js"
   ]
 }
