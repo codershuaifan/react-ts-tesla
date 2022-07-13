@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_ts_tesla=self.webpackChunkreact_ts_tesla||[]).push([[221],{5221:function(s,t,e){e.r(t),e.d(t,{default:function(){return a}});e(2791);var c=e(3482),n=e(6871),r=e(184);function a(){var s=(0,n.s0)(),t=(0,n.TH)().state.picUrl;return(0,r.jsxs)("div",{className:"shoplist_body",children:[(0,r.jsx)(c.l2,{onBack:function(){return s(-1)},children:"\u6807\u9898"}),(0,r.jsx)("img",{src:t,className:"shoplist_img"})]})}}}]);
+//# sourceMappingURL=221.1f8e30be.chunk.js.map

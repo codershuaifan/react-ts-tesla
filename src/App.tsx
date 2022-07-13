@@ -1,11 +1,11 @@
 import React from 'react'
 import Main from './components/main'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, HashRouter } from 'react-router-dom'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Main />
-    </BrowserRouter>
+    </HashRouter>
   )
 }
