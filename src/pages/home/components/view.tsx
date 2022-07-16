@@ -3,6 +3,8 @@ import { Popup } from 'antd-mobile'
 import { CloseOutline } from 'antd-mobile-icons'
 import { useNavigate } from 'react-router-dom'
 import { HttpGet } from '../../../utils/axios'
+import { Image } from 'antd-mobile'
+import Spin from '../../../components/spin/Spin'
 import './view.css'
 
 export default function View() {
@@ -32,7 +34,7 @@ export default function View() {
                 key={item.id} onClick={() => setSelectNumber(item.id)}
               >
                 <span>{item.name}</span>
-                <img alt='' src={item.configuration[0].carColor[item.id].configList[1].picUrl} className='view_img' />
+                <Image alt='' src={item.configuration[0].carColor[item.id].configList[1].picUrl} className='view_img' placeholder={<Spin />} />
               </div>
             )
           })

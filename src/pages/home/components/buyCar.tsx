@@ -1,75 +1,66 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import { LeftOutline } from 'antd-mobile-icons'
 import { Image } from 'antd-mobile'
 import { HttpGet } from '../../../utils/axios'
 import CarInfo from '../../../components/carInfo'
 import Spin from '../../../components/spin/Spin'
+import { store } from '../../../components/main'
+import { observer } from 'mobx-react-lite'
 
 import './buyCar.css'
 
-export default function BuyCar() {
-  const [data, setData] = useState<any>(null)
-  const [carConfig, setCarConfig] = useState<any>({})
-  const [selectCarColor, setSelectCarColor] = useState<number>(1)
-  const [selectCarWheel, setSelectCarWheel] = useState<number>(1)
+
+const BuyCar = () => {
   const navigate = useNavigate()
   const { id } = useParams()
+
+  const { carStateStore: carState } = useContext(store)
+
+  const { carState: carData, carColor, carConfig, giveCarColor, giveCarConfig } = carState
+
   const onback = () => {
     navigate(-1)
-  }
-
-  useEffect(() => {
-    HttpGet('/tesla').then((res: any) => {
-      const rotationImg = res?.rotationImg?.find((i: any) => i.id == id)
-      setData(rotationImg)
-      setCarConfig(rotationImg?.configuration[0])
-    })
-  }, [])
-
-  const chooseWheel = (id: number) => {
-    setSelectCarWheel(id)
-    setCarConfig(data?.configuration[id - 1])
   }
 
   return (
     <div>
       <div className='buy_top'>
         <LeftOutline onClick={onback} />
-        <div className='buy_design'>设计您的 {data?.name} ｜ Tesla</div>
+        <div className='buy_design'>设计您的 {carData?.name} ｜ Tesla</div>
       </div>
       <div className="buy_main">
-        <Image className='buy_img' src={carConfig?.carColor?.[selectCarColor - 1]?.configList?.[1]?.picUrl} alt='' placeholder={<Spin />}/>
-        <div className='buy_logo'>{data?.name}</div>
+        <Image className='buy_img' src={carColor.configList[1].picUrl} alt='' placeholder={<Spin />} />
+        <div className='buy_logo'>{carData?.name}</div>
         <div style={{ fontWeight: 400, marginTop: '18px' }}>预计交付日期：12 至 16 周</div>
-        <CarInfo params={data} isBuy={true} />
-        <div className='buy_energy'>{data?.mode}</div>
+        <CarInfo params={carData} isBuy={true} />
+        <div className='buy_energy'>{carData?.mode}</div>
         <div className="buy_carPrice">
-          <span>{data?.name}</span>
-          <span>¥{data?.price}</span>
+          <span>{carData?.name}</span>
+          <span>¥{carData?.price}</span>
         </div>
         <div className='buy_detail'>
           查看详情
         </div>
-        <Image className='buy_img' style={{ marginTop: '20px' }} src={carConfig?.carColor?.[selectCarColor - 1]?.configList?.[1]?.picUrl} alt='' placeholder={<Spin />}/>
+        <Image className='buy_img' style={{ marginTop: '20px' }} src={carColor.configList[1].picUrl} alt='' placeholder={<Spin />} />
         <div className='buy_color'>选择颜色</div>
         <div className='buy_box'>
           {
-            data?.color.map((i: any) => {
+            carData?.color.map((i: any) => {
               return <img alt='' src={i.picUrl} className='buy_ball' key={i.id}
-                onClick={() => setSelectCarColor(i.id)} style={selectCarColor === i.id ? { border: '#3E6AE1 2px solid' } : {}}
+                onClick={() => giveCarColor(i.id)} style={carColor.id === i.id ? { border: '#3E6AE1 2px solid' } : {}}
               />
             })
           }
         </div>
         <div className='buy_color' style={{ marginTop: '40px' }}>选择轮毂</div>
-        <Image alt='' className='buy_head' src={carConfig?.carColor?.[selectCarColor - 1]?.configList?.[0]?.picUrl} placeholder={<Spin />}/>
+        <Image alt='' className='buy_head' src={carColor.configList[0].picUrl} placeholder={<Spin />} />
         <div className='buy_wheel_box'>
           {
-            data?.configuration?.map((i: any) => {
+            carData?.configuration?.map((i: any) => {
               return (
-                <img alt='' className='buy_ball' src={i.picUrl} key={i.id} style={selectCarWheel === i.id ? { border: '#3E6AE1 2px solid' } : {}}
-                  onClick={() => chooseWheel(i.id)}
+                <img alt='' className='buy_ball' src={i.picUrl} key={i.id} style={carConfig.id === i.id ? { border: '#3E6AE1 2px solid' } : {}}
+                  onClick={() => giveCarConfig(i)}
                 />
               )
             })
@@ -80,3 +71,5 @@ export default function BuyCar() {
     </div>
   )
 }
+
+export default observer(BuyCar)
